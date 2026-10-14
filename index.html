@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Friday</title>
+<meta name="description" content="Les achats que tu guettes pour le Black Friday, le prix à viser et le meilleur prix vu.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Black Friday">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F3F4F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12131A" media="(prefers-color-scheme: dark)">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/bricolage-grotesque-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/bricolage-grotesque-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url("fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+
+/* Une colonne pensée pour l'iPhone : compte à rebours, résumé, tableau récapitulatif qui défile, cartes étiquettes de prix, sites, ajout, données. */
+:root{
+  --bg:#F3F4F7; --surface:#FFFFFF; --ink:#16181F; --muted:#5B6070; --line:#DCDFE7;
+  --accent:#C2185B; --accent-soft:#FBE4EE; --good:#1E7A4F; --good-soft:#E2F3EA; --warn:#9A6200; --warn-soft:#FBF0D9;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12131A; --surface:#1B1D26; --ink:#ECEDF2; --muted:#A1A6B5; --line:#2C2F3B;
+  --accent:#F06292; --accent-soft:#3A1726; --good:#5CC793; --good-soft:#15301F; --warn:#E3B04B; --warn-soft:#352812; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12131A; --surface:#1B1D26; --ink:#ECEDF2; --muted:#A1A6B5; --line:#2C2F3B;
+  --accent:#F06292; --accent-soft:#3A1726; --good:#5CC793; --good-soft:#15301F; --warn:#E3B04B; --warn-soft:#352812; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--f-body);-webkit-tap-highlight-color:transparent}
+.wrap{max-width:720px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top,0px) + 22px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 48px) max(16px,env(safe-area-inset-left,0px));
+  display:grid;gap:22px}
+h1{font:700 clamp(36px,9vw,52px)/1.02 var(--f-display);margin:0;letter-spacing:-.01em}
+h2{font:700 21px/1.2 var(--f-display);margin:0}
+.eyebrow{font:500 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+header{display:grid;gap:8px}
+header p{margin:0;color:var(--muted)}
+.meta{font:400 13px var(--f-mono);color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.offline{color:var(--warn)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;min-width:0}
+.stat b{font:500 clamp(20px,6vw,26px) var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat span{font-size:13px;line-height:1.3;color:var(--muted)}
+.stat.hi b{color:var(--accent)}
+
+/* Tableau récapitulatif : défile horizontalement du doigt, première colonne figée */
+.recap{display:grid;gap:10px}
+.recap .hint{font-size:13px;color:var(--muted);margin:0}
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--surface);overscroll-behavior-x:contain}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:560px;font-size:15px}
+th,td{padding:12px 12px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{font:500 12px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+td{font-family:var(--f-mono)}
+tr:last-child td{border-bottom:0}
+th:first-child,td:first-child{position:sticky;left:0;text-align:left;background:var(--surface);font-family:var(--f-body);white-space:normal;min-width:150px;max-width:180px;border-right:1px solid var(--line);z-index:1}
+td:first-child a{color:var(--ink);text-decoration:none;font-weight:500;display:block;line-height:1.3}
+td.ok{color:var(--good)}
+tr.bought td{opacity:.6}
+
+.filters{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.list,#list{display:grid;gap:14px}
+.item{display:grid;gap:14px;scroll-margin-top:16px}
+.item.bought{opacity:.78}
+.item:target{outline:2px solid var(--accent);outline-offset:2px}
+.top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.name{font:700 21px/1.2 var(--f-display);margin:0}
+.cat{font:500 12px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.pill{font:500 13px var(--f-mono);padding:4px 10px;border-radius:999px;white-space:nowrap;flex:none}
+.pill.surveiller{background:var(--warn-soft);color:var(--warn)}
+.pill.acheter{background:var(--good-soft);color:var(--good)}
+.pill.achete{background:var(--accent-soft);color:var(--accent)}
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.prices label,.form label{display:grid;gap:4px;font-size:13px;color:var(--muted);min-width:0}
+input,textarea,select{font:500 17px var(--f-mono);width:100%;min-height:48px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);-webkit-appearance:none;appearance:none}
+textarea{font-family:var(--f-body);font-weight:400;min-height:80px}
+.form input{font-family:var(--f-body);font-weight:400}
+.form input[type=number]{font-family:var(--f-mono)}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 12px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:32px;font-family:var(--f-body)}
+.verdict{font-size:16px;color:var(--muted);margin:0}
+.verdict strong{color:var(--good);font-weight:500}
+details.note summary{cursor:pointer;color:var(--accent);font-size:15px;min-height:44px;display:flex;align-items:center;list-style:none}
+details.note summary::-webkit-details-marker{display:none}
+details.note summary::before{content:"+";font-family:var(--f-mono);margin-right:6px}
+details.note[open] summary::before{content:"–"}
+details.note p{margin:0 0 4px;color:var(--muted);font-size:16px}
+.where{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 15px var(--f-body);text-decoration:none;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:9px 14px;min-height:44px;display:inline-flex;align-items:center}
+.actions{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.actions .row2{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,.btn{font:500 16px var(--f-body);min-height:44px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+button.primary,.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+button.danger{color:var(--accent)}
+:is(button,.btn,.chip,select,input,textarea,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (hover:hover){.chip:hover{border-color:var(--accent);color:var(--accent)}button:hover{border-color:var(--muted)}}
+a{color:var(--accent)}
+.status{font-size:13px;color:var(--muted);min-height:1em}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:22px;color:var(--muted);text-align:center}
+.mine{font:500 11px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+
+.sites ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.sites li a{display:grid;gap:2px;padding:10px 0;text-decoration:none;color:inherit;border-bottom:1px solid var(--line)}
+.sites li:last-child a{border-bottom:0}
+.sites li b{color:var(--accent);font-weight:500}
+.sites li span{font-size:15px;color:var(--muted)}
+
+.form{display:grid;gap:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid2 .full{grid-column:1/-1}
+.err{color:var(--accent);font-size:15px;margin:0}
+.data p{margin:8px 0;color:var(--muted);font-size:16px}
+.data .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+footer{font-size:13px;color:var(--muted);text-align:center}
+
+@media (max-width:380px){.prices{grid-template-columns:1fr 1fr}.prices label:last-child{grid-column:span 2}}
+@media (min-width:700px){body{font-size:16px}.wrap{padding-top:40px}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow" id="countdown">Black Friday · 27 novembre 2026</span>
+    <h1>Black Friday</h1>
+    <p>Les achats que tu guettes, le prix à viser pour chacun et le meilleur prix déjà vu. Mets à jour le prix actuel quand tu le vérifies : la carte te dit si c'est le moment d'acheter.</p>
+    <div class="meta"><span id="maj"></span><span id="net"></span></div>
+  </header>
+
+  <section class="summary" aria-label="Résumé">
+    <div class="stat"><b id="s-count">0</b><span>articles suivis</span></div>
+    <div class="stat"><b id="s-ready">0</b><span>au prix visé ou moins</span></div>
+    <div class="stat hi"><b id="s-save">0 €</b><span>économisés sur les achats faits</span></div>
+  </section>
+
+  <section class="recap" aria-labelledby="recap-h">
+    <h2 id="recap-h">Tous les articles</h2>
+    <p class="hint">Fais glisser le tableau du doigt pour voir toutes les colonnes. Touche un nom pour ouvrir sa fiche.</p>
+    <div class="scroller" tabindex="0" role="region" aria-labelledby="recap-h">
+      <table>
+        <thead><tr><th scope="col">Article</th><th scope="col">Actuel</th><th scope="col">Visé</th><th scope="col">Écart</th><th scope="col">Meilleur vu</th><th scope="col">Habituel</th></tr></thead>
+        <tbody id="recap"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="list" aria-labelledby="list-h">
+    <h2 id="list-h">Fiches</h2>
+    <div class="filters" role="group" aria-label="Filtrer">
+      <button type="button" data-f="tous" aria-pressed="true">Tous</button>
+      <button type="button" data-f="acheter" aria-pressed="false">À acheter</button>
+      <button type="button" data-f="surveiller" aria-pressed="false">À surveiller</button>
+      <button type="button" data-f="achete" aria-pressed="false">Achetés</button>
+    </div>
+    <div id="list"></div>
+    <div class="empty" id="empty" hidden>Rien à afficher ici.</div>
+  </section>
+
+  <section class="card sites" aria-labelledby="sites-h">
+    <h2 id="sites-h">À ouvrir dès que le Black Friday commence</h2>
+    <ul id="sites"></ul>
+  </section>
+
+  <form class="card form" id="add" novalidate>
+    <h2>Ajouter un article</h2>
+    <div class="grid2">
+      <label class="full" for="f-name">Article<input id="f-name" placeholder="Ex. Apple TV 4K" required autocomplete="off"></label>
+      <label class="full" for="f-cat">Catégorie<input id="f-cat" placeholder="Ex. Salon" autocomplete="off"></label>
+      <label for="f-cur">Prix actuel (€)<input id="f-cur" type="number" min="0" step="1" inputmode="decimal"></label>
+      <label for="f-tgt">Prix visé (€)<input id="f-tgt" type="number" min="0" step="1" inputmode="decimal"></label>
+      <label for="f-reg">Prix habituel (€)<input id="f-reg" type="number" min="0" step="1" inputmode="decimal"></label>
+      <label for="f-link">Lien<input id="f-link" type="url" placeholder="https://" autocomplete="off"></label>
+      <label class="full" for="f-note">Note<textarea id="f-note" rows="2" placeholder="Ce qu'il faut vérifier avant d'acheter"></textarea></label>
+    </div>
+    <p class="err" id="f-err" hidden></p>
+    <div><button class="primary" type="submit">Ajouter</button> <span class="status" id="f-status"></span></div>
+  </form>
+
+  <section class="card data" aria-labelledby="data-h">
+    <h2 id="data-h">Tes modifications</h2>
+    <p>Les prix que tu changes, les statuts, les articles que tu ajoutes ou retires sont gardés <strong>sur cet appareil seulement</strong>. Ils ne vont ni sur l'artefact de claude.ai ni sur tes autres appareils.</p>
+    <p>Si tu changes de téléphone, si tu supprimes l'app de l'écran d'accueil ou si tu effaces les données de Safari, ces modifications sont perdues. La liste de base, elle, revient toujours. Pour les garder, enregistre une sauvegarde avant et rouvre-la sur le nouvel appareil.</p>
+    <p>Quand la liste est mise à jour en ligne (nouveaux prix vérifiés), le nouveau prix remplace le tien s'il est plus récent. Ton statut (« Acheté »…) reste le tien.</p>
+    <div class="row">
+      <button type="button" id="export">Enregistrer une sauvegarde</button>
+      <button type="button" id="import">Ouvrir une sauvegarde</button>
+      <button type="button" class="danger" id="reset">Tout remettre à zéro</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+    <p class="status" id="d-status" role="status"></p>
+  </section>
+
+  <footer>Les prix viennent des sites marchands à la date indiquée sur chaque fiche. Vérifie toujours avant d'acheter.</footer>
+</div>
+
+<script>
+const KEY = "bf-local-v1";
+const STATUS = {surveiller:"À surveiller", acheter:"À acheter", achete:"Acheté"};
+const eur = n => (n==null||isNaN(n)) ? "—" : new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
+const num = v => { if(v===""||v==null) return null; const n=Number(String(v).replace(",",".")); return isNaN(n)?null:n; };
+const safeUrl = u => { try{ const x=new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; }catch(e){ return null; } };
+const $ = id => document.getElementById(id);
+
+let base = {articles:[], sites:[], maj:null};
+let local = load();
+let filter = "tous";
+
+function load(){
+  try{ const v = JSON.parse(localStorage.getItem(KEY)); if(v && typeof v==="object") return {patches:v.patches||{}, mine:v.mine||[], hidden:v.hidden||[]}; }catch(e){}
+  return {patches:{}, mine:[], hidden:[]};
+}
+function persist(){
+  try{ localStorage.setItem(KEY, JSON.stringify(local)); return true; }catch(e){ return false; }
+}
+
+// Liste affichée = liste en ligne (articles.json) + tes modifications. Un prix vérifié en ligne plus récent que ta modification l'emporte ; ton statut reste.
+function merged(){
+  const out = [];
+  for(const a of base.articles){
+    if(local.hidden.includes(a.id)) continue;
+    const p = local.patches[a.id], it = {...a};
+    if(p){ for(const k in p){ if(k==="_at") continue; if(k==="status" || !a.maj || p._at >= a.maj) it[k]=p[k]; } }
+    out.push(it);
+  }
+  for(const m of local.mine) out.push({...m, mine:true});
+  return out.sort((a,b)=> (a.status==="achete")-(b.status==="achete") || (a.order??0)-(b.order??0));
+}
+
+function edit(id, patch){
+  const m = local.mine.find(x=>x.id===id);
+  if(m) Object.assign(m, patch);
+  else local.patches[id] = {...(local.patches[id]||{}), ...patch, _at:new Date().toISOString()};
+  return persist();
+}
+function removeItem(id){
+  const i = local.mine.findIndex(x=>x.id===id);
+  if(i>=0) local.mine.splice(i,1); else { local.hidden.push(id); delete local.patches[id]; }
+  persist(); render();
+}
+
+function countdown(){
+  const [y,m,d] = (base.black_friday||"2026-11-27").split("-").map(Number);
+  const bf = new Date(y,m-1,d);
+  const days = Math.ceil((bf - new Date())/86400000);
+  const label = bf.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+  $("countdown").textContent = days > 0 ? `Black Friday · J-${days} · ${label}` : (days > -4 ? "Black Friday · c'est maintenant" : `Black Friday ${bf.getFullYear()} · terminé`);
+}
+
+function render(){
+  countdown();
+  if(base.maj) $("maj").textContent = "Liste mise à jour le " + new Date(base.maj).toLocaleDateString("fr-FR",{day:"numeric",month:"long"}) + " à " + new Date(base.maj).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+  const items = merged();
+  let ready=0, saved=0;
+  const tb = $("recap"); tb.textContent="";
+  const list = $("list"); list.textContent="";
+  for(const it of items){
+    const cur=num(it.current), tgt=num(it.target), best=num(it.best), reg=num(it.regular);
+    const atTarget = cur!=null && tgt!=null && cur<=tgt;
+    if(atTarget && it.status!=="achete") ready++;
+    if(it.status==="achete" && cur!=null && reg!=null) saved += Math.max(0, reg-cur);
+
+    const tr = document.createElement("tr"); if(it.status==="achete") tr.className="bought";
+    const a = document.createElement("a"); a.href="#"+it.id; a.textContent=it.name;
+    a.addEventListener("click",()=>{ if(filter!=="tous") setFilter("tous"); });
+    const td0=document.createElement("td"); td0.append(a); tr.append(td0);
+    const gap = (cur!=null&&tgt!=null) ? cur-tgt : null;
+    for(const [v,cls] of [[eur(cur)],[eur(tgt)],[gap==null?"—":(gap<=0?"OK":"+"+eur(gap)), gap!=null&&gap<=0?"ok":""],[eur(best)],[eur(reg)]]){
+      const td=document.createElement("td"); td.textContent=v; if(cls) td.className=cls; tr.append(td);
+    }
+    tb.append(tr);
+
+    if(filter!=="tous" && it.status!==filter) continue;
+    list.append(card(it,{cur,tgt,best,reg,atTarget}));
+  }
+  $("empty").hidden = list.children.length>0;
+  $("s-count").textContent=items.length;
+  $("s-ready").textContent=ready;
+  $("s-save").textContent=eur(saved);
+}
+
+function card(it,{cur,tgt,best,reg,atTarget}){
+  const el=document.createElement("article");
+  el.className="card item"+(it.status==="achete"?" bought":""); el.id=it.id;
+  el.innerHTML=`
+    <div class="top">
+      <div style="display:grid;gap:3px;min-width:0"><span class="cat"></span><h3 class="name"></h3></div>
+      <span class="pill"></span>
+    </div>
+    <div class="prices">
+      <label>Prix actuel<input data-k="current" type="number" min="0" step="1" inputmode="decimal"></label>
+      <label>Prix visé<input data-k="target" type="number" min="0" step="1" inputmode="decimal"></label>
+      <label>Meilleur vu<input data-k="best" type="number" min="0" step="1" inputmode="decimal"></label>
+    </div>
+    <p class="verdict"></p>
+    <details class="note"><summary>Détails</summary><p></p></details>
+    <div class="where"><span class="cat">Où regarder</span><div class="chips"></div></div>
+    <div class="actions">
+      <select aria-label="Statut"><option value="surveiller">À surveiller</option><option value="acheter">À acheter</option><option value="achete">Acheté</option></select>
+      <a class="btn primary link" target="_blank" rel="noopener">Voir l'offre</a>
+      <div class="row2"><button class="danger" type="button">Retirer de ma liste</button><span class="status" role="status"></span></div>
+    </div>`;
+  el.querySelector(".cat").textContent=it.category||"";
+  if(it.mine){ const s=document.createElement("span"); s.className="mine"; s.textContent="Ajouté par toi"; el.querySelector(".top>div").append(s); }
+  el.querySelector(".name").textContent=it.name;
+  const pill=el.querySelector(".pill"); pill.classList.add(it.status); pill.textContent=STATUS[it.status]||it.status;
+  const note=el.querySelector(".note");
+  if(it.note){ note.querySelector("p").textContent=it.note; } else note.remove();
+  const link=el.querySelector(".link"), lu=it.link&&safeUrl(it.link); if(lu) link.href=lu; else link.remove();
+  const chips=el.querySelector(".chips");
+  for(const l of (Array.isArray(it.links)?it.links:[])){
+    const u=l&&safeUrl(l.url); if(!u) continue;
+    const c=document.createElement("a"); c.className="chip"; c.href=u; c.target="_blank"; c.rel="noopener";
+    c.textContent=l.label||new URL(u).hostname; chips.append(c);
+  }
+  if(!chips.children.length) el.querySelector(".where").remove();
+  const v=el.querySelector(".verdict");
+  if(cur==null||tgt==null) v.textContent="Renseigne le prix actuel et le prix visé pour savoir si c'est le moment.";
+  else if(atTarget) v.innerHTML=`<strong>C'est le moment :</strong> ${eur(tgt-cur)} sous ton prix visé.`;
+  else v.textContent=`Encore ${eur(cur-tgt)} au-dessus de ton prix visé.`;
+  if(best!=null && cur!=null && cur<best) v.append(" Nouveau meilleur prix !");
+  if(reg!=null) v.append(` Prix habituel : ${eur(reg)}.`);
+  const st=el.querySelector(".actions .status");
+  const saved = ok => { st.textContent = ok ? "Enregistré sur ce téléphone" : "Impossible d'enregistrer : la mémoire de Safari est bloquée."; };
+  el.querySelectorAll(".prices input").forEach(inp=>{
+    inp.id=`${it.id}-${inp.dataset.k}`; inp.value = it[inp.dataset.k] ?? "";
+    inp.addEventListener("change",()=>{ saved(edit(it.id,{[inp.dataset.k]:num(inp.value)})); render(); document.getElementById(inp.id)?.focus({preventScroll:true}); });
+  });
+  const sel=el.querySelector("select"); sel.id=`${it.id}-status`; sel.value=it.status||"surveiller";
+  sel.addEventListener("change",()=>{ saved(edit(it.id,{status:sel.value})); render(); });
+  const del=el.querySelector(".danger");
+  del.addEventListener("click",()=>{
+    if(del.dataset.confirm) removeItem(it.id);
+    else { del.dataset.confirm="1"; del.textContent="Toucher encore pour confirmer"; setTimeout(()=>{delete del.dataset.confirm; del.textContent="Retirer de ma liste";},4000); }
+  });
+  return el;
+}
+
+function renderSites(){
+  const ul=$("sites"); ul.textContent="";
+  for(const s of base.sites||[]){
+    const u=safeUrl(s.url); if(!u) continue;
+    const li=document.createElement("li"), a=document.createElement("a"), b=document.createElement("b"), sp=document.createElement("span");
+    a.href=u; a.target="_blank"; a.rel="noopener"; b.textContent=s.nom; sp.textContent=s.texte; a.append(b,sp); li.append(a); ul.append(li);
+  }
+}
+
+function setFilter(f){
+  filter=f;
+  document.querySelectorAll(".filters button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.f===f)));
+  render();
+}
+document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>setFilter(b.dataset.f)));
+
+$("add").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("f-name").value.trim();
+  if(!name){ $("f-err").textContent="Donne un nom à l'article."; $("f-err").hidden=false; $("f-name").focus(); return; }
+  $("f-err").hidden=true;
+  local.mine.push({id:"m"+Date.now().toString(36), name, category:$("f-cat").value.trim(),
+    current:num($("f-cur").value), target:num($("f-tgt").value), regular:num($("f-reg").value), best:null,
+    status:"surveiller", note:$("f-note").value.trim(), link:$("f-link").value.trim(), order:1000+local.mine.length});
+  $("f-status").textContent = persist() ? "Ajouté sur ce téléphone" : "Ajouté, mais Safari bloque l'enregistrement : il disparaîtra à la fermeture.";
+  e.target.reset(); render();
+});
+$("f-name").addEventListener("input",()=>{$("f-err").hidden=true});
+
+$("export").addEventListener("click",()=>{
+  const blob=new Blob([JSON.stringify({app:"black-friday",date:new Date().toISOString(),...local},null,1)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="black-friday-sauvegarde.json";
+  document.body.append(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+  $("d-status").textContent="Sauvegarde créée. Sur iPhone, choisis « Enregistrer dans Fichiers ».";
+});
+$("import").addEventListener("click",()=>$("import-file").click());
+$("import-file").addEventListener("change",async e=>{
+  const f=e.target.files[0]; if(!f) return;
+  try{
+    const d=JSON.parse(await f.text());
+    if(d.app!=="black-friday") throw 0;
+    local={patches:d.patches||{}, mine:d.mine||[], hidden:d.hidden||[]}; persist(); render();
+    $("d-status").textContent="Sauvegarde rouverte.";
+  }catch(x){ $("d-status").textContent="Ce fichier n'est pas une sauvegarde Black Friday."; }
+  e.target.value="";
+});
+const reset=$("reset");
+reset.addEventListener("click",()=>{
+  if(!reset.dataset.confirm){ reset.dataset.confirm="1"; reset.textContent="Toucher encore pour tout effacer"; setTimeout(()=>{delete reset.dataset.confirm; reset.textContent="Tout remettre à zéro";},4000); return; }
+  local={patches:{},mine:[],hidden:[]}; persist(); render(); $("d-status").textContent="Tes modifications sont effacées.";
+  delete reset.dataset.confirm; reset.textContent="Tout remettre à zéro";
+});
+
+function netState(){ $("net").textContent = navigator.onLine ? "" : "· Hors connexion : dernière liste enregistrée"; $("net").className = navigator.onLine ? "" : "offline"; }
+addEventListener("online",()=>{ netState(); refresh(); });
+addEventListener("offline",netState);
+
+async function refresh(){
+  try{
+    const r = await fetch("articles.json",{cache:"no-cache"});
+    if(!r.ok) throw 0;
+    base = await r.json();
+  }catch(e){
+    try{ const c = await caches.match("articles.json",{ignoreSearch:true}); if(c) base = await c.json(); }catch(_){}
+  }
+  renderSites(); render();
+  if(location.hash){ const t=document.getElementById(location.hash.slice(1)); if(t) t.scrollIntoView(); }
+}
+
+netState(); render(); refresh();
+if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body></html>
