@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-14T08:36:01Z",
+ "maj": "2026-10-17T22:17:18Z",
  "black_friday": "2026-11-27",
  "articles": [
   {
@@ -61,6 +61,102 @@
    "status": "acheter",
    "target": 1199,
    "maj": "2026-10-13T18:51:02Z"
+  },
+  {
+   "id": "tv-lg-c6-65",
+   "best": 1468,
+   "category": "Salon · Télé",
+   "current": 1598,
+   "link": "https://www.bonne-promo.com/prix/24270/lg-65c6-tv-oled-65-2026",
+   "links": [
+    {
+     "label": "Comparatif + ODR",
+     "url": "https://www.bonne-promo.com/prix/24270/lg-65c6-tv-oled-65-2026"
+    },
+    {
+     "label": "Darty",
+     "url": "https://www.darty.com/nav/recherche?text=OLED65C6"
+    },
+    {
+     "label": "Boulanger",
+     "url": "https://www.boulanger.com/resultats?tr=OLED65C6"
+    },
+    {
+     "label": "Fnac",
+     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=OLED65C6"
+    },
+    {
+     "label": "Amazon",
+     "url": "https://www.amazon.fr/s?k=OLED65C6"
+    },
+    {
+     "label": "Leclerc",
+     "url": "https://www.e.leclerc/recherche?q=OLED65C6"
+    },
+    {
+     "label": "Le Dénicheur",
+     "url": "https://ledenicheur.fr/search?search=OLED65C6"
+    },
+    {
+     "label": "Dealabs",
+     "url": "https://www.dealabs.com/search?q=OLED65C6"
+    }
+   ],
+   "name": "LG OLED C6 65 pouces (2026)",
+   "note": "Attention : pied central, pas deux pieds latéraux (fiche Boulanger). 144,1 × 23 cm avec pied, donc il tient sur le meuble. Le 17/10 : 1 598 € chez Darty (1 899 € - code TV140 - ODR LG 200 €, livraison comprise), 1 699 € chez Boulanger et 1 698,99 € chez LG après ODR. Plus bas vu 1 468 € chez Darty en octobre. Le code Darty expire le 19/10, l'ODR LG le 1er novembre. Prix visé : 1 399 € (estimation).",
+   "order": 1.5,
+   "regular": 1899,
+   "status": "surveiller",
+   "target": 1399,
+   "maj": "2026-10-17T22:17:18Z"
+  },
+  {
+   "id": "tv-lg-c6-77",
+   "best": 1978,
+   "category": "Salon · Télé",
+   "current": 2138,
+   "link": "https://www.bonne-promo.com/prix/24268/lg-77c6-tv-oled-77-2026",
+   "links": [
+    {
+     "label": "Comparatif + ODR",
+     "url": "https://www.bonne-promo.com/prix/24268/lg-77c6-tv-oled-77-2026"
+    },
+    {
+     "label": "Darty",
+     "url": "https://www.darty.com/nav/recherche?text=OLED77C6"
+    },
+    {
+     "label": "Boulanger",
+     "url": "https://www.boulanger.com/resultats?tr=OLED77C6"
+    },
+    {
+     "label": "Fnac",
+     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=OLED77C6"
+    },
+    {
+     "label": "Amazon",
+     "url": "https://www.amazon.fr/s?k=OLED77C6"
+    },
+    {
+     "label": "Leclerc",
+     "url": "https://www.e.leclerc/recherche?q=OLED77C6"
+    },
+    {
+     "label": "Le Dénicheur",
+     "url": "https://ledenicheur.fr/search?search=OLED77C6"
+    },
+    {
+     "label": "Dealabs",
+     "url": "https://www.dealabs.com/search?q=OLED77C6"
+    }
+   ],
+   "name": "LG OLED C6 77 pouces (2026)",
+   "note": "Attention : environ 171 cm de large, donc plus large que le meuble de 150 cm. Le 17/10 : 2 138 € chez Darty (2 599 € - code TV200 - ODR LG 300 €, livraison comprise), 2 299 € chez Boulanger après ODR. Plus bas vu 1 978 € chez Darty en octobre. Le code Darty expire le 19/10, l'ODR LG le 1er novembre. Prix visé : 1 899 € (estimation).",
+   "order": 1.6,
+   "regular": 2599,
+   "status": "surveiller",
+   "target": 1899,
+   "maj": "2026-10-17T22:17:18Z"
   },
   {
    "id": "tv-lg-b5-65",
