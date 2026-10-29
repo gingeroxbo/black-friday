@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-17T22:17:18Z",
+ "maj": "2026-10-29T19:06:44Z",
  "black_friday": "2026-11-27",
  "articles": [
   {
@@ -296,10 +296,10 @@
   },
   {
    "id": "hue-signe-gradient-lampadaire",
-   "best": 330,
+   "best": 243,
    "category": "Salon · Éclairage",
-   "current": 330,
-   "link": "https://www.ldlc.com/fiche/PB00557932.html",
+   "current": 243,
+   "link": "https://www.amazon.fr/s?k=Hue+Signe+gradient+lampadaire+noir",
    "links": [
     {
      "label": "Philips Hue",
@@ -335,12 +335,12 @@
     }
    ],
    "name": "Hue Signe gradient lampadaire",
-   "note": "Grand modèle sur pied : 145,8 cm de haut, socle de 11,1 × 11,1 cm. Le 13/10 : 329,95 € chez LDLC (blanc/bois, 1 en stock), 339,99 € chez Philips Hue, qui annonce jusqu'à -25 % pour Halloween. Prix visé : 240 €, soit environ -30 % (estimation). À ne pas confondre avec le nouveau Signe gradient pole (179,5 cm, 299,99 €).",
+   "note": "Grand modèle sur pied : 145,8 cm de haut, socle de 11,1 × 11,1 cm. Le 29/10 : 243,44 € chez Amazon en noir (relevé par gus). Le 13/10 : 329,95 € chez LDLC, 339,99 € chez Philips Hue. Prix visé : 240 €, soit environ -30 % (estimation). À ne pas confondre avec le nouveau Signe gradient pole (179,5 cm, 299,99 €).",
    "order": 6,
    "regular": 340,
    "status": "acheter",
    "target": 240,
-   "maj": "2026-10-13T18:51:02Z"
+   "maj": "2026-10-29T19:06:44Z"
   },
   {
    "id": "lg-stanbyme-2-max",
