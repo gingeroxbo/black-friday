@@ -1,72 +1,52 @@
 {
- "maj": "2026-10-29T19:06:44Z",
+ "maj": "2026-10-30T06:47:27Z",
  "black_friday": "2026-11-27",
  "articles": [
   {
-   "id": "tv-lg-b6-65",
-   "best": 1398,
+   "id": "tv-sony-bravia-8-ii-65",
+   "best": 2199,
    "category": "Salon · Télé",
-   "current": 1431,
-   "link": "https://www.bonne-promo.com/prix/26460/lg-oled65b6-tv-65-2026",
+   "current": 2199,
+   "link": "https://www.boulanger.com/resultats?tr=Bravia+8+II+65",
    "links": [
     {
-     "label": "Darty",
-     "url": "https://www.darty.com/nav/achat/hifi_video/tous_ecrans_plats/oled/lg_oled65b6_2026.html"
+     "label": "Boulanger",
+     "url": "https://www.boulanger.com/resultats?tr=Bravia+8+II+65"
     },
     {
-     "label": "LG",
-     "url": "https://www.lg.com/fr/tv-barres-de-son/oled/lg-oled65b65la/"
+     "label": "Darty",
+     "url": "https://www.darty.com/nav/recherche?text=K-65XR8M2"
     },
     {
      "label": "Fnac",
-     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=OLED65B6"
+     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=K-65XR8M2"
     },
     {
-     "label": "Boulanger",
-     "url": "https://www.boulanger.com/resultats?tr=OLED65B6"
-    },
-    {
-     "label": "Amazon",
-     "url": "https://www.amazon.fr/s?k=OLED65B6"
-    },
-    {
-     "label": "Carrefour",
-     "url": "https://www.carrefour.fr/s?q=OLED65B6"
-    },
-    {
-     "label": "Leclerc",
-     "url": "https://www.e.leclerc/recherche?q=OLED65B6"
-    },
-    {
-     "label": "Cdiscount",
-     "url": "https://www.cdiscount.com/search/10/OLED65B6.html"
+     "label": "Sony",
+     "url": "https://www.sony.fr/bravia/products/bravia-8m2"
     },
     {
      "label": "Le Dénicheur",
-     "url": "https://ledenicheur.fr/search?search=OLED65B6"
+     "url": "https://ledenicheur.fr/search?search=K-65XR8M2"
     },
     {
      "label": "Dealabs",
-     "url": "https://www.dealabs.com/search?q=OLED65B6"
-    },
-    {
-     "label": "Comparatif + ODR",
-     "url": "https://www.bonne-promo.com/prix/26460/lg-oled65b6-tv-65-2026"
+     "url": "https://www.dealabs.com/search?q=Bravia+8+II"
     }
    ],
-   "name": "LG OLED B6 65 pouces (2026)",
-   "note": "Pieds latéraux à 106,9 cm l'un de l'autre (bords extérieurs), 21,8 cm de profondeur : environ 21,5 cm libres de chaque côté et 19,7 cm derrière. Le 13/10 : 1 431 € en marketplace (CDiscount), 1 599 € chez LG après ODR de 200 € (jusqu'au 1er novembre). Plus bas vu 1 398 € chez Darty le 8/10. 120 Hz natif (la B5 monte à 144 Hz). Règle : < 1 300 € et moins de 300 € d'écart avec la B5.",
-   "order": 1,
-   "regular": 1799,
-   "status": "acheter",
-   "target": 1199,
-   "maj": "2026-10-13T18:51:02Z"
+   "name": "Sony Bravia 8 II 65 pouces (QD-OLED, 2025)",
+   "note": "Choix numéro 1 (films le soir, pieds sur les côtés). Vérifier la référence K-65XR8M2 : la Bravia 8 sans « II » (K-65XR80, 2024) n'est pas une bonne affaire à ce prix. Pieds aux extrémités : 144 cm entre les bords extérieurs, profondeur 33,9 cm, avec une position surélevée pour glisser une barre de son. Tient sur le meuble de 150 × 41,5 cm. Le 30/10 : 2 199 € chez Boulanger au lieu de 2 399 €. Prix visé : 1 999 € (estimation). Surveiller les packs télé + barre de son.",
+   "order": 1.2,
+   "regular": 2399,
+   "status": "surveiller",
+   "target": 1999,
+   "maj": "2026-10-30T06:47:27Z"
   },
   {
    "id": "tv-lg-c6-65",
    "best": 1468,
    "category": "Salon · Télé",
-   "current": 1598,
+   "current": 1538,
    "link": "https://www.bonne-promo.com/prix/24270/lg-65c6-tv-oled-65-2026",
    "links": [
     {
@@ -103,196 +83,96 @@
     }
    ],
    "name": "LG OLED C6 65 pouces (2026)",
-   "note": "Attention : pied central, pas deux pieds latéraux (fiche Boulanger). 144,1 × 23 cm avec pied, donc il tient sur le meuble. Le 17/10 : 1 598 € chez Darty (1 899 € - code TV140 - ODR LG 200 €, livraison comprise), 1 699 € chez Boulanger et 1 698,99 € chez LG après ODR. Plus bas vu 1 468 € chez Darty en octobre. Le code Darty expire le 19/10, l'ODR LG le 1er novembre. Prix visé : 1 399 € (estimation).",
+   "note": "Plan B si la Sony reste trop chère. Attention : pied central fixe de 47 cm, pas deux pieds latéraux. 144,1 × 23 cm avec pied, donc elle tient sur le meuble. Le 30/10 : 1 538 € chez Boulanger au lieu de 1 899 €, et 1 509 € chez Fnac.com avec l'adhésion Fnac+ (-10 %) et l'ODR LG de 200 €, tous deux jusqu'au 1er novembre. Le 17/10 : 1 598 € chez Darty. Plus bas vu 1 468 € chez Darty en octobre. Prix visé : 1 399 € (estimation).",
    "order": 1.5,
    "regular": 1899,
    "status": "surveiller",
    "target": 1399,
-   "maj": "2026-10-17T22:17:18Z"
+   "maj": "2026-10-30T06:47:27Z"
   },
   {
-   "id": "tv-lg-c6-77",
-   "best": 1978,
-   "category": "Salon · Télé",
-   "current": 2138,
-   "link": "https://www.bonne-promo.com/prix/24268/lg-77c6-tv-oled-77-2026",
+   "id": "sony-theatre-bar-8",
+   "best": 299,
+   "category": "Salon · Son",
+   "current": 299,
+   "link": "https://www.boulanger.com/resultats?tr=Bravia+Theatre+Bar+8",
    "links": [
     {
-     "label": "Comparatif + ODR",
-     "url": "https://www.bonne-promo.com/prix/24268/lg-77c6-tv-oled-77-2026"
-    },
-    {
-     "label": "Darty",
-     "url": "https://www.darty.com/nav/recherche?text=OLED77C6"
+     "label": "Sony",
+     "url": "https://www.sony.fr/store/product/hta8000.cel/bravia-theatre-bar-8"
     },
     {
      "label": "Boulanger",
-     "url": "https://www.boulanger.com/resultats?tr=OLED77C6"
-    },
-    {
-     "label": "Fnac",
-     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=OLED77C6"
-    },
-    {
-     "label": "Amazon",
-     "url": "https://www.amazon.fr/s?k=OLED77C6"
-    },
-    {
-     "label": "Leclerc",
-     "url": "https://www.e.leclerc/recherche?q=OLED77C6"
-    },
-    {
-     "label": "Le Dénicheur",
-     "url": "https://ledenicheur.fr/search?search=OLED77C6"
-    },
-    {
-     "label": "Dealabs",
-     "url": "https://www.dealabs.com/search?q=OLED77C6"
-    }
-   ],
-   "name": "LG OLED C6 77 pouces (2026)",
-   "note": "Attention : environ 171 cm de large, donc plus large que le meuble de 150 cm. Le 17/10 : 2 138 € chez Darty (2 599 € - code TV200 - ODR LG 300 €, livraison comprise), 2 299 € chez Boulanger après ODR. Plus bas vu 1 978 € chez Darty en octobre. Le code Darty expire le 19/10, l'ODR LG le 1er novembre. Prix visé : 1 899 € (estimation).",
-   "order": 1.6,
-   "regular": 2599,
-   "status": "surveiller",
-   "target": 1899,
-   "maj": "2026-10-17T22:17:18Z"
-  },
-  {
-   "id": "tv-lg-b5-65",
-   "best": 936,
-   "category": "Salon · Télé",
-   "current": 1100,
-   "link": "https://www.carrefour.fr/p/tv-oled-4k-65-164-cm-oled65b5-lg-8806096345863",
-   "links": [
-    {
-     "label": "Carrefour",
-     "url": "https://www.carrefour.fr/p/tv-oled-4k-65-164-cm-oled65b5-lg-8806096345863"
-    },
-    {
-     "label": "Conforama · comparatif",
-     "url": "https://www.bonne-promo.com/prix/20308/lg-oled65b5-2025-65-tv-oled-evo"
+     "url": "https://www.boulanger.com/resultats?tr=Bravia+Theatre+Bar+8"
     },
     {
      "label": "Darty",
-     "url": "https://www.darty.com/nav/recherche?text=OLED65B5"
-    },
-    {
-     "label": "Boulanger",
-     "url": "https://www.boulanger.com/resultats?tr=OLED65B5"
+     "url": "https://www.darty.com/nav/recherche?text=HT-A8000"
     },
     {
      "label": "Fnac",
-     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=OLED65B5"
+     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=HT-A8000"
     },
     {
      "label": "Amazon",
-     "url": "https://www.amazon.fr/s?k=OLED65B5"
-    },
-    {
-     "label": "Leclerc",
-     "url": "https://www.e.leclerc/recherche?q=OLED65B5"
+     "url": "https://www.amazon.fr/s?k=Bravia+Theatre+Bar+8"
     },
     {
      "label": "Le Dénicheur",
-     "url": "https://ledenicheur.fr/search?search=OLED65B5"
+     "url": "https://ledenicheur.fr/search?search=HT-A8000"
     },
     {
      "label": "Dealabs",
-     "url": "https://www.dealabs.com/search?q=OLED65B5"
+     "url": "https://www.dealabs.com/search?q=Bravia+Theatre+Bar+8"
     }
    ],
-   "name": "LG OLED B5 65 pouces (2025)",
-   "note": "Pieds latéraux à 105,7 cm l'un de l'autre (bords extérieurs), 23,5 cm de profondeur : environ 22 cm libres de chaque côté des pieds et 18 cm derrière sur le meuble. Le 13/10 : 1 099,99 € chez Carrefour (200 € sur la carte fidélité, retrait magasin seulement) et 1 099 € chez Conforama. Plus bas historique 936 € (Conforama, juillet). Jusqu'à 144 Hz.",
+   "name": "Sony Bravia Theatre Bar 8",
+   "note": "Choix recommandé pour la Bravia 8 II. Réf. HT-A8000. Le 30/10 : 299 € chez Boulanger, mais en rupture de stock. Mettre une alerte de disponibilité et revérifier chaque jour. 599 € sur le site Sony le même jour (lancée à 1 000 €). Barre seule Dolby Atmos / DTS:X avec 11 haut-parleurs, dont deux vers le plafond. Avec la télé Sony, l'Acoustic Center Sync utilise l'écran comme voie centrale. 110 cm de large, elle passe facilement entre les pieds de la Sony.",
    "order": 2,
-   "regular": 1699,
+   "regular": 999,
    "status": "acheter",
-   "target": 900,
-   "maj": "2026-10-13T18:51:02Z"
+   "target": 549,
+   "maj": "2026-10-30T06:47:27Z"
   },
   {
-   "id": "apple-tv-4k",
-   "best": null,
-   "category": "Salon · Accessoires",
-   "current": 349,
-   "link": "https://iphonesoft.fr/2026/10/13/apple-apple-tv-4k-4e-generation-349-euro",
+   "id": "sony-theatre-bar-9",
+   "best": 799,
+   "category": "Salon · Son",
+   "current": 799,
+   "link": "https://www.boulanger.com/resultats?tr=Bravia+Theatre+Bar+9",
    "links": [
     {
-     "label": "Apple",
-     "url": "https://www.apple.com/fr/shop/buy-tv/apple-tv-4k"
-    },
-    {
-     "label": "Amazon",
-     "url": "https://www.amazon.fr/s?k=Apple+TV+4K"
-    },
-    {
-     "label": "Fnac",
-     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=Apple+TV+4K"
+     "label": "Boulanger",
+     "url": "https://www.boulanger.com/resultats?tr=Bravia+Theatre+Bar+9"
     },
     {
      "label": "Darty",
-     "url": "https://www.darty.com/nav/recherche?text=Apple+TV+4K"
-    },
-    {
-     "label": "Boulanger",
-     "url": "https://www.boulanger.com/resultats?tr=Apple+TV+4K"
-    },
-    {
-     "label": "Dealabs",
-     "url": "https://www.dealabs.com/search?q=Apple+TV+4K"
-    }
-   ],
-   "name": "Apple TV 4K",
-   "note": "Nouvelle 4e génération annoncée le 13/10 à 349 € (puce A19, micros « Dis Siri »), en magasin le 13 novembre. L'ancienne est passée à 229 € (Wi-Fi 64 Go) et 299 € (Ethernet 128 Go). Peu de chances de remise Apple au Black Friday sur un modèle sorti 2 semaines avant.",
-   "order": 3,
-   "regular": 349,
-   "status": "acheter",
-   "target": 329,
-   "maj": "2026-10-13T18:51:02Z"
-  },
-  {
-   "id": "homepod-x2",
-   "best": 798,
-   "category": "Salon · Accessoires",
-   "current": 798,
-   "link": "https://www.apple.com/fr/shop/buy-homepod/homepod",
-   "links": [
-    {
-     "label": "Apple",
-     "url": "https://www.apple.com/fr/shop/buy-homepod/homepod"
-    },
-    {
-     "label": "Amazon",
-     "url": "https://www.amazon.fr/s?k=HomePod+2e+g%C3%A9n%C3%A9ration"
+     "url": "https://www.darty.com/nav/recherche?text=HT-A9000"
     },
     {
      "label": "Fnac",
-     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=HomePod+2e+g%C3%A9n%C3%A9ration"
+     "url": "https://www.fnac.com/SearchResult/ResultList.aspx?Search=HT-A9000"
     },
     {
-     "label": "Darty",
-     "url": "https://www.darty.com/nav/recherche?text=HomePod+2e+g%C3%A9n%C3%A9ration"
-    },
-    {
-     "label": "Boulanger",
-     "url": "https://www.boulanger.com/resultats?tr=HomePod+2e+g%C3%A9n%C3%A9ration"
+     "label": "Amazon",
+     "url": "https://www.amazon.fr/s?k=Bravia+Theatre+Bar+9"
     },
     {
      "label": "Le Dénicheur",
-     "url": "https://ledenicheur.fr/search?search=HomePod+2e+g%C3%A9n%C3%A9ration"
+     "url": "https://ledenicheur.fr/search?search=HT-A9000"
     },
     {
      "label": "Dealabs",
-     "url": "https://www.dealabs.com/search?q=HomePod+2e+g%C3%A9n%C3%A9ration"
+     "url": "https://www.dealabs.com/search?q=Bravia+Theatre+Bar+9"
     }
    ],
-   "name": "2 x HomePod (2e génération)",
-   "note": "Prix pour la paire. Le 13/10 : 399 € pièce chez Apple (Minuit ou Blanc), 399,99 € chez Fnac. Pas de nouvelle génération annoncée. Sur supports ou étagères de chaque côté du meuble : la télé laisse moins de 3 cm libres de chaque côté sur le dessus. Prix visé : 340 € pièce, soit environ -15 % (estimation).",
-   "order": 4,
-   "regular": 798,
-   "status": "acheter",
-   "target": 680,
-   "maj": "2026-10-13T18:51:02Z"
+   "name": "Sony Bravia Theatre Bar 9",
+   "note": "Plan B si la Bar 8 à 299 € ne revient pas en stock. Réf. HT-A9000, 13 haut-parleurs. Le 30/10 : 799 € chez Boulanger, avec -50 % sur le caisson Sub 7, et 999 € sur le site Sony. Attention : 129,8 cm de large pour 144 cm entre les bords extérieurs des pieds de la Sony, donc à vérifier en magasin. Elle ne tient pas devant les pieds sur un meuble de 41,5 cm de profondeur. Prix visé : 749 € (estimation).",
+   "order": 2.1,
+   "regular": 1399,
+   "status": "surveiller",
+   "target": 849,
+   "maj": "2026-10-30T06:47:27Z"
   },
   {
    "id": "hue-signe-gradient-lampadaire",
@@ -394,7 +274,7 @@
    "id": "samsung-seche-linge-9kg",
    "best": 748,
    "category": "Buanderie",
-   "current": 748,
+   "current": 812,
    "link": "https://www.achatmoinscher.com/comparateur-de-prix-Seche-linge/seche-linge-samsung-blanc-pompe-a-chaleur-optimal-dry-ai-control-9kg-dv90dg6845lku3-classe-a.html",
    "links": [
     {
@@ -435,12 +315,12 @@
     }
    ],
    "name": "Sèche-linge Samsung Optimal Dry Air Refresh 9 kg (DV90DG6845LKU3)",
-   "note": "Pompe à chaleur, 9 kg. Le 13/10 : 899 € chez Samsung, 748 € chez Amazon (vendeur P.E.Shop), 803,91 € chez Fnac, 899,99 € chez Darty (+39 € de livraison). Prix visé : 650 €, soit environ -28 % sur le prix Samsung (estimation).",
+   "note": "Pompe à chaleur, 9 kg. Le 30/10 : 811,66 € chez Fnac, 822,28 € chez Amazon (vendeur tiers), 899 € chez Samsung ; l'offre Amazon à 748 € du 13/10 a disparu. Prix visé : 650 €, soit environ -28 % sur le prix Samsung (estimation).",
    "order": 8,
    "regular": 899,
    "status": "acheter",
    "target": 650,
-   "maj": "2026-10-14T08:34:39Z"
+   "maj": "2026-10-30T06:47:27Z"
   },
   {
    "id": "samsung-seche-linge-9kg-leu3",
