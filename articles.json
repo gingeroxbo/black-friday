@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-31T06:46:49Z",
+ "maj": "2026-11-01T06:45:26Z",
  "black_friday": "2026-11-27",
  "articles": [
   {
@@ -83,12 +83,12 @@
     }
    ],
    "name": "LG OLED C6 65 pouces (2026)",
-   "note": "Plan B si la Sony reste trop chère. Attention : pied central fixe de 47 cm, pas deux pieds latéraux. 144,1 × 23 cm avec pied, donc elle tient sur le meuble. Le 31/10 : 1 548 € chez Fnac.com (1 899 € moins 10 % Fnac+ et ODR LG de 200 €, jusqu'au 1er novembre), 1 749 € sans ODR. Le 30/10 : 1 538 € chez Boulanger. Le 17/10 : 1 598 € chez Darty. Plus bas vu 1 468 € chez Darty en octobre. Prix visé : 1 399 € (estimation).",
+   "note": "Plan B si la Sony reste trop chère. Attention : pied central fixe de 47 cm, pas deux pieds latéraux. 144,1 × 23 cm avec pied, donc elle tient sur le meuble. Le 01/11 : toujours 1 548 € chez Fnac.com (1 899 € moins 10 % Fnac+ et ODR LG de 200 €), 1 699 € chez LG et Boulanger avec l'ODR seule. Le 30/10 : 1 538 € chez Boulanger. Le 17/10 : 1 598 € chez Darty. Plus bas vu 1 468 € chez Darty en octobre. Prix visé : 1 399 € (estimation).",
    "order": 1.5,
    "regular": 1899,
    "status": "surveiller",
    "target": 1399,
-   "maj": "2026-10-31T06:46:49Z"
+   "maj": "2026-11-01T06:45:26Z"
   },
   {
    "id": "sony-theatre-bar-8",
